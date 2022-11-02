@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PostData } from '../posts/PostData';
+import { PostData } from '../PostData';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostsService } from '../posts/posts.service';
+import { PostsService } from '../posts.service';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
