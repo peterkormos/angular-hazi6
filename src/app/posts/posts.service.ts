@@ -24,6 +24,12 @@ export class PostsService {
       );
   }
 
+  getPost(postId : number): Observable<PostData> {
+    return this.httpClient
+      .get<PostData>(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+  }
+
+
   deletePost(postId: number) {
     this.httpClient.delete(
       `https://jsonplaceholder.typicode.com/posts/${postId}`
