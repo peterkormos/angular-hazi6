@@ -8,7 +8,7 @@ import { PostsService } from '../posts/posts.service';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  @Input() postData?: PostData;
+  postData?: PostData;
 
   constructor(
     private postsService: PostsService,
