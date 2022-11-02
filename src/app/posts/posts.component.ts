@@ -5,7 +5,7 @@ import { PostsService } from './posts.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.css'],
 })
 export class PostsComponent implements OnInit {
   posts: PostData[] = [];
@@ -13,13 +13,11 @@ export class PostsComponent implements OnInit {
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService
-      .getPosts()
-      .subscribe((posts) => (this.posts = posts));
+    this.postsService.getPosts().subscribe((posts) => (this.posts = posts));
   }
 
   deletePost(postDataId: number) {
-    this.posts.splice(postDataId-1, 1);
+    this.posts.splice(postDataId - 1, 1);
     this.postsService.deletePost(postDataId);
   }
 }

@@ -9,8 +9,8 @@ const routes: Routes = [
     component: PostsComponent
   },
   {
-    path :'post/:post',
-    component: PostComponent
+    path :'post',
+    component: PostComponent,
   },
 ];
 

@@ -24,9 +24,9 @@ export class PostsService {
       );
   }
 
-  deletePost(postDataId: number) {
+  deletePost(postId: number) {
     this.httpClient.delete(
-      `https://jsonplaceholder.typicode.com/posts/${postDataId}`
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
     );
   }
 }

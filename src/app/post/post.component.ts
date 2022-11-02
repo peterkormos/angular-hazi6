@@ -1,17 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostData } from '../posts/PostData';
-import {Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostsService } from '../posts/posts.service';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-@Input() post? : PostData;
+  @Input() postData?: PostData;
 
-  constructor() { }
+  constructor(
+    private postsService: PostsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(
+      (param) => (this.postData = param as PostData)
+    );
   }
-
 }
